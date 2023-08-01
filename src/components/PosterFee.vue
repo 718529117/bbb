@@ -94,15 +94,25 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, ref, onMounted } from "vue"
+import { reactive, ref } from "vue"
 
-let bill = reactive({})
-let poster = ref('')
+let bill = reactive({
+  ball_price_mode_name: 1,
+  ball_price: 1,
+  ball_num: 1,
+  site_price_mode_name: 1,
+  site_price: 1,
+  site_time: 1,
+  person_num: 1,
+  other_price: 1,
+  remark: 1,
+})
+// let poster = ref('')
 let count = ref(0)
 let average = ref(0)
-let copy_text = ref('')
-let width = ref(300)
-let height = ref(600)
+// let copy_text = ref('')
+// let width = ref(300)
+// let height = ref(600)
 
 // onMounted(() => {
 // countBill()
@@ -135,7 +145,7 @@ const getNowTime = () => {
   let time = year + '/' + addZero(month) + '/' + addZero(day);
   return time;
 }
-const addZero = (s) => {
+const addZero = (s: any) => {
   return s < 10 ? ('0' + s) : s;
 }
 
